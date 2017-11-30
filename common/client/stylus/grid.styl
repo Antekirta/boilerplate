@@ -1,0 +1,68 @@
+@require 'global-variables.styl'
+
+$columns-count = 12
+
+$column-dtw-width = $desktop-wide / $columns-count
+$column-dt-width = $desktop / $columns-count
+$column-tb-width = $tablet / $columns-count
+$column-tbs-width = $tablet-small / $columns-count
+$column-ph-width = $phone / $columns-count
+$column-phs-width = $phone-small / $columns-count
+
+generate-columns($n, $width)
+  for $i in (1..$n)
+    .col-{$i}
+      box-sizing border-box
+      width $i * $width
+
+generate-media-columns($n, $width, $prefix)
+  for $i in (0..$n)
+    @media (max-width: $width * $n)
+      .col-{$prefix}-{$i}
+        box-sizing border-box
+        width $i * $width
+
+generate-offsets($n, $width)
+  for $i in (1..$n)
+    .col-offset-{$i}
+      margin-left: $i * $width
+
+generate-media-offsets($n, $width, $prefix)
+  for $i in (0..$n)
+    @media (max-width: $width * $n)
+      .col-{$prefix}-offset-{$i}
+        margin-left: $i * $width
+
+generate-media-paddings($width, $prefix)
+  @media (max-width: $width)
+    .col--padded--{$prefix}
+      padding: 0 $default-padding
+
+generate-columns($columns-count, $column-tb-width)
+
+generate-media-columns($columns-count, $column-dt-width, 'dtw')
+generate-media-columns($columns-count, $column-tb-width, 'tb')
+generate-media-columns($columns-count, $column-tbs-width, 'tbs')
+generate-media-columns($columns-count, $column-ph-width, 'ph')
+generate-media-columns($columns-count, $column-phs-width, 'phs')
+
+generate-offsets($columns-count, $column-tb-width)
+
+generate-media-offsets($columns-count, $column-dt-width, 'dtw')
+generate-media-offsets($columns-count, $column-tb-width, 'tb')
+generate-media-offsets($columns-count, $column-tbs-width, 'tbs')
+generate-media-offsets($columns-count, $column-ph-width, 'ph')
+generate-media-offsets($columns-count, $column-phs-width, 'phs')
+
+generate-media-paddings($desktop-wide, 'dtw')
+generate-media-paddings($desktop, 'dt')
+generate-media-paddings($tablet, 'tb')
+generate-media-paddings($tablet-small, 'tbs')
+generate-media-paddings($phone, 'ph')
+generate-media-paddings($phone-small, 'phs')
+
+.col--padded
+  padding: 0 $default-padding
+
+.col--padded--double
+  padding: 0 $default-padding * 2

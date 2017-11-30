@@ -1,0 +1,25 @@
+@require '../../../common/client/stylus/global-variables.styl'
+
+.hamburger
+  position: relative
+  size(22px)
+  margin: auto
+  transform: translateY(-3px)
+  cursor: pointer
+
+  &__stick
+    size(100%, 2px)
+    margin-bottom: 5px
+    border-radius: 2px
+    transition: transform $transition-middle
+    transform-origin: 50% 50%
+
+.hamburger--opened
+  .hamburger__stick
+    &--top
+      transform: translate(0, 7px) rotate(45deg)
+    &--middle
+      opacity: 0
+    &--bottom
+      transform: translate(0, -7px) rotate(-45deg)
+  

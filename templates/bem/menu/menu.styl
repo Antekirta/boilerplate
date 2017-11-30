@@ -1,0 +1,23 @@
+@require '../../../common/client/stylus/global-variables.styl'
+
+.menu
+
+  &__item
+    display: inline-block
+    padding: 0 $default-padding
+
+  &__link
+    position: relative
+    text-transform: uppercase
+    text-decoration: none
+    font-family: $font-family-title
+    font-weight: $font-weight-bolder
+    &::after
+      content: ''
+      position: absolute
+      display: block
+      size(0, 2px)
+      transition: $transition-middle
+    &:hover
+      &::after
+        width: 100%

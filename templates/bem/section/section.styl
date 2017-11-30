@@ -1,0 +1,21 @@
+@require '../../../common/client/stylus/global-variables.styl'
+
+.section
+  position: relative
+  width: 100%
+  overflow-x: hidden
+  &--no-padding
+    padding-top: 0
+  &__centered
+    max-width: $tablet
+    margin: auto
+  &__row
+    display: flex
+    justify-content: flex-start
+    align-items: flex-start
+    flex-wrap: wrap
+    &--space-between
+      justify-content: space-between
+    &--offset
+      &--top
+        margin-top: $default-padding * 4

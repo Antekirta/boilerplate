@@ -1,0 +1,9 @@
+mixin section-header(title)
+    if title.top_header
+        h3.section-header__top.col--padded= title.top_header
+    if title.image.name
+        +icon(title.image.name  , 'section-header__image')
+    if title.main_header
+        h2.section-header__main.col--padded= title.main_header
+    if title.short_desc
+        .section-header__short-desc.col--padded= title.short_desc

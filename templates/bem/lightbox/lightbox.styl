@@ -1,0 +1,24 @@
+@require '../../../common/client/stylus/global-variables.styl'
+
+.lightbox
+  position: fixed
+  size(100vw, 100vh)
+  top: 0
+  left: 0
+  display: flex
+  justify-content: center
+  align-items: center
+  z-index: 3
+  display: none
+
+  &__content
+    min-width: $phone-small
+    height: auto
+    border-radius: $border-radius-small
+    text-align: center
+
+  &__video
+    display: block
+    size($tablet, auto)
+  .vsc-controller
+    display: none

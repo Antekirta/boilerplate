@@ -1,0 +1,20 @@
+@require '../../../common/client/stylus/global-variables.styl'
+
+.go-to-top
+  position: fixed
+  display: flex
+  justify-content: center
+  align-items: center
+  bottom: $default-padding
+  right: $default-padding
+  size(30px)
+  border-radius: $border-radius-small
+  cursor: pointer
+  transition: $transition-default
+  transform: translateX(0)
+  &--hidden
+    transform: translateX(60px)
+
+  &__icon
+    margin-top: -5px
+    transition: color $transition-default

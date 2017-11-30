@@ -1,0 +1,19 @@
+'use strict';
+
+module.exports = {
+  WIDTH: 'width',
+
+  HEIGHT: 'height',
+
+  MARGIN: {
+    GENERAL: 'margin',
+
+    TOP: 'margin-top',
+
+    RIGHT: 'margin-right',
+
+    BOTTOM: 'margin-bottom',
+
+    LEFT: 'margin-left'
+  }
+};

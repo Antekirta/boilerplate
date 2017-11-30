@@ -1,0 +1,32 @@
+@require '../../../common/client/stylus/global-variables.styl'
+
+.text-carousel
+  &__item
+    outline: none !important
+
+  .slick-dots
+    transform: translateY($default-padding * 3)
+    text-align: center
+    li
+      $button-size = 16px
+      $mark-size = 10px
+      $mark-offset = $button-size - $mark-size
+
+      display: inline-block
+      margin: $default-padding
+      button
+        position: relative
+        size($button-size)
+        border: none
+        outline: none
+        border-radius: 50%
+        &::after
+          content: ''
+          position: absolute
+          display: block
+          size($mark-size)
+          background-color: transparent
+          border-radius: 50%
+          top: "calc(%s / 2)" % $mark-offset
+          left: "calc(%s / 2)" % $mark-offset
+          transition: $transition-default

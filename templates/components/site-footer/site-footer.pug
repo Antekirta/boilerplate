@@ -1,0 +1,26 @@
+section.section.section--bg--tuna.site-footer
+    .section__centered
+        .section__row.site-footer__row
+            .col-2.col-tb-12.site-footer__column
+                a.logo(href= '/')
+                    +icon('logo', 'logo__image logo__image--svg')
+                    img.logo__image.logo__image-png(src= pathToImage + 'logo.png')
+
+            .col-8.col-tb-12.site-footer__column
+                .menu.site-footer__menu
+                    ul.menu__list
+                        each item in footerMenuItems
+                            li.menu__item
+                                a.menu__link(href= item.link)= item.title[currentLanguage]
+
+            .col-2.col-tb-12.site-footer__column
+                .social-links.site-footer__social-links
+                    ul.social-links__list
+                        li.social-links__item
+                            a.social-links__link(href= 'https://www.facebook.com/Sidenis.ru/' target= '_blank')
+                                i.fa.fa-facebook.social-links__icon(aria-hidden= true)
+                        li.social-links__item
+                            a.social-links__link(href= 'mailto:info.spb@sidenis.com' target= '_blank')
+                                i.fa.fa-envelope.social-links__icon(aria-hidden= true)
+
+include ../../bem-blocks/go-to-top/go-to-top.pug

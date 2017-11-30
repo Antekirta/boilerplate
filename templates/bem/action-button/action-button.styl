@@ -1,0 +1,15 @@
+@require '../../../common/client/stylus/global-variables.styl'
+
+.action-button
+  display: inline-block
+  padding: $default-padding $default-padding * 1.5
+  border-radius $default-padding * 2
+  cursor: pointer
+  text-align: center
+  text-transform: uppercase
+  text-decoration: none
+  font-family: $font-family-title
+  font-weight: $font-weight-bolder
+  transition: background-color $transition-middle
+  &:active
+    outline: none

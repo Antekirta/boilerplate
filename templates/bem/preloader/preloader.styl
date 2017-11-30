@@ -1,0 +1,27 @@
+@require '../../../common/client/stylus/global-variables.styl'
+
+.preloader
+  position: fixed
+  size(100vw, 100vh)
+  display: flex
+  justify-content: center
+  align-items: center
+  border-radius: $border-radius-small
+  z-index: 3
+  &__spinner
+    display: flex
+    justify-content: center
+    align-items: center
+    size(50px)
+    border-radius: $border-radius-small
+    animation: rotatePlane 1.2s infinite ease-in-out
+  &__spinner-heart
+    size(20px)
+
+@keyframes rotatePlane
+  0%
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+  50%
+    transform: perspective(120px) rotateY(180.1deg) rotateX(0deg)
+  100%
+    transform: perspective(120px) rotateY(180deg) rotateX(-179.9deg)

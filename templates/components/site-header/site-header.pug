@@ -1,0 +1,30 @@
+section.section.section--no-padding.site-header
+
+    .section__centered
+
+        .section__row.site-header__row
+
+            .col-2.col-tb-12.col-ph-4.site-header__logo-container
+                a.logo(href= '/')
+                    +icon('logo', 'logo__image logo__image--svg')
+                    img.logo__image.logo__image--png(src= pathToImage + 'logo.png')
+
+            .col-8.col-tb-12.col-ph-2.site-header__menu-container
+
+                .menu.site-header__menu
+
+                    .hamburger.site-header__hamburger
+                        .hamburger__stick.hamburger__stick--top
+                        .hamburger__stick.hamburger__stick--middle
+                        .hamburger__stick.hamburger__stick--bottom
+
+                    ul.menu__list
+                        each item in mainMenuItems
+                            li.menu__item
+                                a.menu__link(href= item.link)= item.title[currentLanguage]
+
+            .col-2.col-tb-12.col-ph-2.site-header__toggle-lang-container
+                .toggle-language
+                    a.toggle-language__lang(data-lang= 'EN') en
+                    span.toggle-language__delimiter /
+                    a.toggle-language__lang(data-lang= 'DE') de
